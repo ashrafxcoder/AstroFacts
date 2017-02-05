@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ashrafcoder.astrofacts.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+    android:id="@+id/action_save_image"
+    android:orderInCategory="102"
+    android:title="Save Image"
+    app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_image_hd"
+        android:orderInCategory="102"
+        android:title="Settings"
+        app:showAsAction="never" />
+
+
+    <item android:id="@+id/menu_toggle_log"
+        android:showAsAction="always"
+        android:title="@string/sample_show_log" />
+
+    <item
+        android:id="@+id/menu_refresh"
+        android:title="@string/menu_refresh"
+        android:showAsAction="never" />
+
+
+</menu>
