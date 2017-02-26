@@ -44,6 +44,7 @@ public class AccelerometerPlayActivity extends Activity {
     private Display mDisplay;
     private WakeLock mWakeLock;
 
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -332,6 +333,8 @@ public class AccelerometerPlayActivity extends Activity {
         public SimulationView(Context context) {
             super(context);
             mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+
 
             DisplayMetrics metrics = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(metrics);
