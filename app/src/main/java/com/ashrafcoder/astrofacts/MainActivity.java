@@ -379,7 +379,7 @@ public class MainActivity extends AppCompatActivity {
         saveToPreferences(imageUri);
     }
 
-    private  class  ImageData{
+    private class ImageData{
         String title;
         String desc;
         Bitmap bitmap;
@@ -388,9 +388,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isConnected(){
         ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo =  manager.getActiveNetworkInfo();
-
         boolean isConnected = false;
-
         if (networkInfo != null && networkInfo.isConnected()) {
             isConnected = true;
         }
