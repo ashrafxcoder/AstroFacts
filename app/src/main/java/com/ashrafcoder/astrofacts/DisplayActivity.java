@@ -62,44 +62,36 @@ import okhttp3.Response;
 public class DisplayActivity extends AppCompatActivity {
 
 
-
     private Bitmap bitmap;
     ImageView apodImage;
     TextView apodTitle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_display);
-
         apodImage = (ImageView) findViewById(R.id.apod_photo);
         apodTitle = (TextView) findViewById(R.id.apod_title);
-
         Intent intent = getIntent();
-
         //Uri uri = intent.getData();
-
         String fileName = intent.getStringExtra("fileName");
-        try {
+        try
+        {
             bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), Uri.parse(fileName));
             apodImage.setImageBitmap(bitmap);
             apodTitle.setText(intent.getStringExtra("title"));
 
-        } catch (IOException e) {
+        } catch (IOException e)
+        {
             Log.d("NASA ", e.getMessage());
         }
-
-
         //DatabaseUtils.dumpCursor(cursor);
-
-
         //setContentView(imageView);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            MidiManager m = (MidiManager)getSystemService(Context.MIDI_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        {
+            MidiManager m = (MidiManager) getSystemService(Context.MIDI_SERVICE);
             MidiDeviceInfo[] infos = m.getDevices();
         }
-
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 //           StructUtsname utsname = Os.uname();
 //        }
@@ -113,13 +105,11 @@ public class DisplayActivity extends AppCompatActivity {
 //                mTextField.setText("done!");
 //            }
 //        }.start();
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        {
             shouldShowRequestPermissionRationale(Manifest.permission.SET_WALLPAPER);
         }
     }
-
 
 
     private void showAlertWithText(String title, String text) {
@@ -127,7 +117,6 @@ public class DisplayActivity extends AppCompatActivity {
         builder.setPositiveButton("OK", null);
         builder.setTitle(title);
         builder.setMessage(text);
-
         AlertDialog alertDialog = builder.create();
         //showDialog(1);
         alertDialog.show();
@@ -146,19 +135,19 @@ public class DisplayActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
-        if (id == R.id.set_wallpaper) {
-
-            try {
+        if (id == R.id.set_wallpaper)
+        {
+            try
+            {
                 WallpaperManager wallpaperManager = WallpaperManager.getInstance(getBaseContext());
                 wallpaperManager.setBitmap(bitmap);
-            } catch (IOException e) {
+            } catch (IOException e)
+            {
                 e.printStackTrace();
             }
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
