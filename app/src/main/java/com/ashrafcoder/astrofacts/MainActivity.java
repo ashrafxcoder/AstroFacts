@@ -2,6 +2,7 @@ package com.ashrafcoder.astrofacts;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.app.UiAutomation;
@@ -28,6 +29,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
@@ -393,6 +395,39 @@ public class MainActivity extends AppCompatActivity {
             isConnected = true;
         }
         return isConnected;
+    }
+
+
+    void test(){
+        ActionBar.TabListener tabListener;
+        ActionBar.OnNavigationListener navigationListener;
+
+        ActionBar actionBar = getActionBar();
+
+        if (actionBar.isShowing()){
+            actionBar.hide();
+        }else
+        {
+            actionBar.show();
+            //recreate();
+        }
+        GestureDetector.OnDoubleTapListener doubleTapListener = new GestureDetector.OnDoubleTapListener() {
+            @Override
+            public boolean onSingleTapConfirmed(MotionEvent e) {
+                return false;
+            }
+
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                return false;
+            }
+
+            @Override
+            public boolean onDoubleTapEvent(MotionEvent e) {
+                return false;
+            }
+        };
+
     }
 }
 
