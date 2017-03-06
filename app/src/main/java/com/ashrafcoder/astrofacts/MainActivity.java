@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isHdImage;
     private String downloadUrl;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
