@@ -310,9 +310,9 @@ public class MainActivity extends AppCompatActivity {
                     publishProgress((int) ((totalBytesRead / (double) fileLength) * 100));
                 }
 
-                byte[] image = buffer.toByteArray();
-                Log.d("NASA image length:", image.length + "");
-                Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
+                byte[] imageByteArray = buffer.toByteArray();
+                Log.d("NASA image length:", imageByteArray.length + "");
+                Bitmap bitmap = BitmapFactory.decodeByteArray(imageByteArray, 0, imageByteArray.length);
                 imageData.bitmap = bitmap;
 
                 return bitmap;
